@@ -1,0 +1,117 @@
+1. Organização Inicial
+Issue 1 — Criar repositório no GitHub
+Issue 2 — Adicionar estrutura inicial de pastas 
+Issue 3 — Criar README inicial com objetivo do projeto
+Issue 4 — Criar labels padrão no GitHub
+Issue 5 — Configurar proteção da branch main
+Issue 6 — Criar templates de Pull Request
+Issue 7 — Criar templates de Issues
+
+2. Planejamento do Projeto
+Issue 8 — Definir domínio do dataset (tema do projeto)
+Issue 9 — Documentar no MKDocs o domínio escolhido
+Issue 10 — Criar modelo conceitual das entidades
+Issue 11 — Criar modelo lógico do banco
+Issue 12 — Criar modelo físico (DDL)
+Issue 13 — Criar diagrama da arquitetura do pipeline
+Issue 14 — Criar página no MKDocs explicando a arquitetura
+
+3. Criação do Ambiente de Origem (SQL & NoSQL)
+Issue 15 — Criar banco SQL (Postgres/MySQL/etc.)
+Issue 16 — Criar tabelas do modelo físico
+Issue 17 — Criar índices e chaves estrangeiras
+Issue 18 — Criar ambiente NoSQL (opcional)
+Issue 19 — Criar coleções NoSQL
+Issue 20 — Criar script Python de geração de dados
+Issue 21 — Gerar dados sintéticos para tabelas principais
+Issue 22 — Gerar dados sintéticos para tabelas auxiliares
+Issue 23 — Inserir dados SQL
+Issue 24 — Inserir dados NoSQL
+4. Configuração do Data Lake (Object Storage)
+Issue 25 — Configurar MinIO / Azure Blob / Databricks
+Issue 26 — Criar bucket/pasta geral do Data Lake
+Issue 27 — Criar pastas Landing, Bronze, Silver, Gold
+Issue 28 — Documentar estrutura no MKDocs
+
+5. Ingestão — Landing
+Issue 29 — Criar script para extrair dados SQL (raw CSV)
+Issue 30 — Criar script para extrair dados NoSQL (raw JSON)
+Issue 31 — Subir arquivos brutos para Landing
+Issue 32 — Validar consistência dos arquivos na Landing
+
+6. Configuração da Orquestração
+Issue 33 — Escolher ferramenta de orquestração (Airflow/Prefect/etc.)
+Issue 34 — Configurar ambiente local (docker)
+Issue 35 — Criar DAG/pipeline de ingestão Landing
+Issue 36 — Criar DAG de movimentação Landing → Bronze
+Issue 37 — Criar DAG de processamento Bronze → Silver
+Issue 38 — Criar DAG de processamento Silver → Gold
+Issue 39 — Criar DAG final de carga incremental
+
+7. Bronze (Padronização Inicial)
+Issue 40 — Criar script Spark para leitura da Landing
+Issue 41 — Implementar conversão CSV/JSON → Delta Bronze
+Issue 42 — Validar schemas Bronze
+Issue 43 — Documentar transformações Bronze
+
+8. Silver (Transformações e Limpeza)
+Issue 44 — Criar script Silver para tratar tipos
+Issue 45 — Implementar padronização de datas
+Issue 46 — Tratar valores nulos e inconsistentes
+Issue 47 — Normalizar textos
+Issue 48 — Criar tabela Silver final para cada entidade
+Issue 49 — Validar consistência da camada Silver
+Issue 50 — Documentar regras Silver
+
+9. Gold (Modelo Dimensional / OBT)
+Issue 51 — Criar dimensões (SCD Tipo 2)
+Issue 52 — Criar tabelas fato
+Issue 53 — Implementar chave substituta (surrogate key)
+Issue 54 — Criar lógica incremental nas fatos
+Issue 55 — Criar tabela(s) Gold final
+Issue 56 — Documentar modelo dimensional
+
+10. Dashboard
+Issue 57 — Definir 4 KPIs
+Issue 58 — Definir 2 métricas
+Issue 59 — Escolher ferramenta (Power BI / Metabase etc.)
+Issue 60 — Conectar dashboard à camada Gold
+Issue 61 — Construir layout One Page View
+Issue 62 — Criar filtros
+Issue 63 — Criar visualizações dos KPIs
+Issue 64 — Criar visualizações das métricas
+Issue 65 — Documentar dashboard no MKDocs
+
+11. Documentação Completa (MKDocs)
+Issue 66 — Configurar MKDocs no projeto
+Issue 67 — Criar página "Arquitetura Geral"
+Issue 68 — Criar página "Ingestão"
+Issue 69 — Criar página "Transformações"
+Issue 70 — Criar página "Modelo Dimensional"
+Issue 71 — Criar página "Dashboard"
+Issue 72 — Configurar MkDocs GH-Deploy
+Issue 73 — Publicar o site no GitHub Pages
+
+12. Apresentação (A3)
+Issue 74 — Criar slides da apresentação
+Issue 75 — Criar roteiro de apresentação
+Issue 76 — Separar falas da equipe
+Issue 77 — Gravar ensaio da apresentação
+Issue 78 — Preparar demonstração do incremental
+Issue 79 — Finalizar apresentação
+
+13. Testes Finais
+Issue 80 — Testar carga full
+Issue 81 — Testar carga incremental
+Issue 82 — Validar SCD Tipo 2
+Issue 83 — Testar leitura Delta Lake
+Issue 84 — Testar pipelines da orquestração
+Issue 85 — Testar dashboard final
+Issue 86 — Revisar documentação
+Issue 87 — Revisar README final
+
+14. Entrega Final
+Issue 88 — Submeter URL do GitHub no AVA
+Issue 89 — Submeter URL do MKDocs no AVA
+Issue 90 — Verificar checklist final de entrega
+

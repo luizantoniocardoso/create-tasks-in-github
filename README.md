@@ -95,5 +95,40 @@ REPO = "nome-do-repositorio"
 py index.py
 
 ```
+### ou:
+```
+python3 index.py
+```
 
 ---
+# 🧠 O que o Script Faz 
+
+1. Carrega o token via .env
+2. Lê o arquivo tarefas.txt
+3. Monta automaticamente o corpo da issue
+4. Envia cada issue ao GitHub
+5. Aplica delay de proteção contra rate-limit
+
+---
+
+# 🛡️ Evitando Rate Limit
+
+O GitHub bloqueia requests consecutivas rápidas. Para evitar isso:
+```python
+time.sleep(1.2)
+
+if status == 403 and "rate" in resp.lower():
+    print("⚠️ Rate limit atingido! Aguardando 10 segundos...")
+    time.sleep(10)
+```
+exemplo real de saída:
+```
+Encontradas 14 issues
+✔️ Issue criada: Criar repositório no GitHub
+✔️ Issue criada: Configurar estrutura inicial
+❌ Falha ao criar issue: Criar pipeline
+Status: 403
+{"message": "rate limit exceeded"}
+⚠️ Rate limit atingido! Aguardando 10 segundos...
+✔️ Issue criada: Criar pipeline
+```
